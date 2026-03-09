@@ -18,7 +18,7 @@ function task2(n) {
     }
     console.log(`завд 2: факторіал числа ${n} =`, factorial);
 }
-task2(5); 
+task2(3); 
 
 // 3
 function task3(monthNumber) {
@@ -36,40 +36,45 @@ function task3(monthNumber) {
         case 10: monthName = "Жовтень"; break;
         case 11: monthName = "Листопад"; break;
         case 12: monthName = "Грудень"; break;
-        default: monthName = "Невірний номер місяця";
+        default: monthName = "невірний номер місяця";
     }
     console.log(`завад 3: місяць ${monthNumber} це ${monthName}`);
 }
-task3(3);
+task3(8);
 
 // 4
-function task4(arr) {
+function calcSumEvenElementsOfArray(arr) {
     let sum = 0;
     for (let num of arr) {
         if (num % 2 === 0) {
             sum += num;
         }
     }
-    console.log("завд 4: сума парних чисел у масиві: ", sum);
-}
-task4([1, 2, 3, 4, 5, 6]);
+    // console.log("завд 4: сума парних чисел у масиві: ", sum);
 
+    return sum;
+}
+const res = calcSumEvenElementsOfArray([1, 2, 3, 4, 5, 6]);
+console.log('res',res)
+ 
 // 5
-const task5 = (str) => {
-    const vowels = "аеєиіїоуюяАЕЄИІЇОУЮЯ";
+const countVowels = (str) => {
+    const vowels = "аеєиіїоуюя";
+
+    const _str = str.toLowerCase()
     let count = 0;
-    for (let char of str) {
+    for (let char of _str) {
         if (vowels.includes(char)) {
             count++;
         }
     }
     return count;
 };
-console.log("завд 5: кількість голосних у рядку: ", task5("привіт світ"));
+console.log("завд 5: кількість голосних у рядку: ", countVowels("привіт світ"));
 
 // 6
-function task6(base, exponent) {
+function pow(base, exponent) {
     let result = Math.pow(base, exponent);
     console.log(`завд 6: ${base} у степені ${exponent}: `, result);
 }
-task6(2, 3);
+pow(2, 3);
