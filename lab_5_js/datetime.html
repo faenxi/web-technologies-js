@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 3 - Дата та час</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; text-align: center; padding: 30px; background: #eceff1; color: #37474f; }
+    h1 { color: #263238; margin-bottom: 30px; }
+    .card { background: white; border-radius: 15px; padding: 25px; margin: 20px auto; max-width: 550px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    
+    #digital-clock { font-size: 56px;  font-weight: bold; color: #2c3e50; letter-spacing: 2px; }
+    .separator { animation: blink 1s step-start infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .display-area { font-size: 32px; color: #e74c3c; margin: 15px 0; }
+    table { margin: 15px auto; border-collapse: collapse; width: 100%; }
+    th { background: #607d8b; color: white; padding: 10px; }
+    td { padding: 10px; border: 1px solid #eee; }
+    td.today { background: #ff7043; color: white; font-weight: bold; border-radius: 4px; }
+
+    input { padding: 10px; font-size: 16px; border: 1px solid #cfd8dc; border-radius: 8px; margin: 10px 0; width: 80%; }
+    button { padding: 10px 20px; font-size: 15px; cursor: pointer; border: none; background: #546e7a; color: white; border-radius: 6px; transition: 0.3s; margin: 5px; }
+    button:hover { background: #37474f; }
+    #birthday-result { font-size: 18px; margin-top: 15px; line-height: 1.6; color: #2c3e50; }
+  </style>
+</head>
+<body>
+
+  <h1>Time and calendar</h1>
+
+  <div class="card">
+    <h2>Поточний час</h2>
+    <div id="digital-clock">
+      <span id="hours">00</span><span class="separator">:</span><span id="minutes">00</span><span class="separator">:</span><span id="seconds">00</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Таймер зворотного відліку</h2>
+    <input type="datetime-local" id="timer-input">
+    <br>
+    <button onclick="startCountdown()">Запустити</button>
+    <button onclick="stopCountdown()">Скинути</button>
+    <div id="countdown-display" class="display-area">00d 00:00:00</div>
+  </div>
+
+  <div class="card">
+    <h2>Календар</h2>
+    <input type="month" id="month-selector" onchange="renderCalendar()">
+    <div id="calendar-container"></div>
+  </div>
+
+  <div class="card">
+    <h2>Калькулятор Дня Народження</h2>
+    <input type="date" id="birth-date-input">
+    <br>
+    <button onclick="calculateBirthday()">Порахувати</button>
+    <div id="birthday-result"></div>
+  </div>
+
+  <script src="datetime.js"></script>
+</body>
+</html>

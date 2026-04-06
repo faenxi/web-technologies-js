@@ -1,12 +1,14 @@
 // 1
 function manageFruitsArray() {
-    let fruits = ["яблуко", "банан", "апельсин", "груша"];
+    let fruits = ["лимон", "банан", "яблуко", "груша"];
     
     fruits.pop();
     console.log("завд1: без останнього:", fruits);
 
     fruits.unshift("ананас");
     fruits.sort().reverse();
+
+    fruits.length = 0;
     
     let appleIndex = fruits.indexOf("яблуко");
     
@@ -40,9 +42,17 @@ function manageEmployeesData() {
         { name: "Антон", age: 25, position: "розробник" },
         { name: "Ігор", age: 45, position: "розробник" }
     ];
+
+    employees.forEach((item) => {
+        console.log(item.worker = true)
+    })
+
+    console.log(employees)
+    
     
     employees.sort((a, b) => a.name.localeCompare(b.name));
     let developers = employees.filter(emp => emp.position === "розробник");
+    //console.log("завд3 (тільки розробники):", developers);
    
     employees = employees.filter(emp => emp.age <= 40);
     
@@ -50,7 +60,7 @@ function manageEmployeesData() {
     
     return employees; 
 }
-console.log("завд3 (працівники):", manageEmployeesData());
+console.log("завд3:", manageEmployeesData());
 
 // 4
 function manageStudentsData() {
@@ -65,7 +75,7 @@ function manageStudentsData() {
     
     students.sort((a, b) => b.age - a.age);
     
-    let studentThirdCourse = students.find(s => s.course === 3);
+    let studentThirdCourse = students.filter(s => s.course === 3);
     
     console.log("завд4: Студент 3-го курсу:", studentThirdCourse);
     return students;
