@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Список завдань</title>
+  <link rel="stylesheet" href="ToDoList.css" />
+</head>
+<body>
+
+  <header class="header">
+    <h1> Мої завдання</h1>
+    <div class="header-stats">
+      Виконано: <span id="js-done-count">0</span> / <span id="js-total-count">0</span>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ФОРМА ДОДАВАННЯ -->
+    <section class="add-section">
+      <form id="js-add-form" novalidate>
+        <input
+          type="text"
+          id="js-input-task"
+          placeholder="Введіть нове завдання..."
+          required
+          minlength="2"
+          maxlength="200"
+        />
+        <button type="submit" class="add-btn">Додати</button>
+      </form>
+    </section>
+
+    <!-- СОРТУВАННЯ -->
+    <section class="sort-section">
+      <strong>Сортування:</strong>
+      <div class="btn-group">
+        <button class="sort-btn" data-sort="createdAt" onclick="handleSort('createdAt')">За датою додавання</button>
+        <button class="sort-btn" data-sort="done" onclick="handleSort('done')">За виконанням</button>
+        <button class="sort-btn" data-sort="updatedAt" onclick="handleSort('updatedAt')">За датою оновлення</button>
+        <button class="reset-btn" onclick="resetSort()">Скинути</button>
+      </div>
+    </section>
+
+    <!-- СПИСОК ЗАВДАНЬ -->
+    <section>
+      <div id="js-empty-message" class="empty-message" style="display:none;">
+        Завдань ще немає. Додайте перше! 
+      </div>
+      <ul id="js-task-list" class="task-list"></ul>
+    </section>
+
+  </main>
+
+  <script src="ToDoList.js"></script>
+</body>
+</html>

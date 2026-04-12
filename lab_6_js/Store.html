@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Список товарів</title>
+  <link rel="stylesheet" href="Store.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Магазин</h1>
+    <div class="total-price-block">
+      Загальна вартість: <span id="js-total-price">0 грн</span>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ФІЛЬТРАЦІЯ -->
+    <section class="controls-section">
+      <div class="filter-block">
+        <strong>Фільтр:</strong>
+        <div id="js-filter-buttons" class="btn-group"></div>
+      </div>
+
+      <!-- СОРТУВАННЯ -->
+      <div class="sort-block">
+        <strong>Сортування:</strong>
+        <div class="btn-group">
+          <button class="sort-btn" data-sort="price" onclick="handleSort('price')">За ціною</button>
+          <button class="sort-btn" data-sort="createdAt" onclick="handleSort('createdAt')">За датою створення</button>
+          <button class="sort-btn" data-sort="updatedAt" onclick="handleSort('updatedAt')">За датою оновлення</button>
+          <button class="reset-btn" onclick="resetSort()">Скинути сортування</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- СПИСОК ТОВАРІВ -->
+    <section>
+      <div id="js-empty-message" class="empty-message" style="display:none;">
+        Наразі список товарів пустий. Додайте новий товар.
+      </div>
+      <div id="js-product-list" class="product-list"></div>
+      <button class="add-btn" onclick="openAddModal()">+ Додати новий товар</button>
+    </section>
+
+  </main>
+
+  <!-- МОДАЛЬНЕ ВІКНО -->
+  <div id="js-modal" class="modal-overlay" style="display:none;">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2 id="js-modal-title">Додати товар</h2>
+      <form id="js-product-form" novalidate>
+        <input type="hidden" id="js-edit-id" />
+
+        <label for="js-input-name">Назва товару *</label>
+        <input type="text" id="js-input-name" placeholder="Наприклад: Телефон" required minlength="2" />
+
+        <label for="js-input-price">Ціна (грн) *</label>
+        <input type="number" id="js-input-price" placeholder="Наприклад: 1500" required min="0" />
+
+        <label for="js-input-category">Категорія *</label>
+        <select id="js-input-category" required>
+          <option value="">-- Оберіть категорію --</option>
+          <option value="Електроніка">Електроніка</option>
+          <option value="Одяг">Одяг</option>
+          <option value="Продукти">Продукти</option>
+          <option value="Меблі">Меблі</option>
+        </select>
+
+        <label for="js-input-image">URL зображення *</label>
+        <input type="url" id="js-input-image" placeholder="https://..." required />
+
+        <div class="form-actions">
+          <button type="button" class="cancel-btn" onclick="closeModal()">Скасувати</button>
+          <button type="submit" class="submit-btn">Зберегти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SNACKBAR -->
+  <div id="js-snackbar" class="snackbar"></div>
+
+  <script src="Store.js"></script>
+</body>
+</html>
