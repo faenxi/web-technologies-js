@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Завдання 2 — Слайдер</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="main-nav">
+    <div class="nav-brand">ЛР №8 — Завдання 2</div>
+    <span class="nav-title">Слайдер</span>
+  </nav>
+
+  <div class="page-content">
+    
+    <div class="slider-outer">
+      <div class="slider-container" id="main-slider">
+        <div class="slider-track-wrapper">
+          <div class="slider-track" id="main-slider-track">
+            <div class="slide"><div class="slide-content"><div class="slide-icon">🌊</div><h3>Slide 1 — Веб</h3><p>JavaScript та DOM маніпуляції</p></div></div>
+            <div class="slide"><div class="slide-content"><div class="slide-icon">⚡</div><h3>Slide 2 — Events</h3><p>Події браузера та делегування</p></div></div>
+            <div class="slide"><div class="slide-content"><div class="slide-icon">🎨</div><h3>Slide 3 — CSS3</h3><p>Transitions, Animations, Transforms</p></div></div>
+            <div class="slide"><div class="slide-content"><div class="slide-icon">🔄</div><h3>Slide 4 — Drag & Drop</h3><p>HTML5 Drag and Drop API</p></div></div>
+            <div class="slide"><div class="slide-content"><div class="slide-icon">💾</div><h3>Slide 5 — Storage</h3><p>localStorage та sessionStorage</p></div></div>
+            <div class="slide"><div class="slide-content"><div class="slide-icon">🎮</div><h3>Slide 6 — Games</h3><p>Memory Pair Game та ігрова логіка</p></div></div>
+            <div class="slide"><div class="slide-content"><div class="slide-icon">📦</div><h3>Slide 7 — Modules</h3><p>ES6 Modules та функціональний стиль</p></div></div>
+            <div class="slide"><div class="slide-content"><div class="slide-icon">🚀</div><h3>Slide 8 — Async</h3><p>Promises, async/await та Fetch API</p></div></div>
+          </div>
+        </div>
+
+        
+        <button class="slider-arrow slider-arrow-prev" aria-label="Попередній">&#8249;</button>
+        <button class="slider-arrow slider-arrow-next" aria-label="Наступний">&#8250;</button>
+
+        
+        <div class="slider-dots" id="main-slider-dots"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="slider.js"></script>
+</body>
+</html>

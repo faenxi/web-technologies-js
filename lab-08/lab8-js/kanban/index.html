@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Завдання 3 — Kanban</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="main-nav">
+    <div class="nav-brand">ЛР №8 — Завдання 3</div>
+    <span class="nav-title">Kanban</span>
+  </nav>
+
+  <div class="page-content">
+    <div class="kanban-header-bar">
+      <input type="text" id="new-task-input" class="kanban-task-input" placeholder="Нове завдання..." />
+      <select id="new-task-column" class="kanban-column-select">
+        <option value="todo">To Do</option>
+        <option value="working">Working</option>
+        <option value="done">Done</option>
+      </select>
+      <button id="add-task-btn" class="btn btn-primary btn-sm">+ Додати</button>
+    </div>
+
+    <div class="kanban-board" id="kanban-board">
+      <div class="kanban-column" id="col-todo" data-column="todo">
+        <div class="kanban-col-header kanban-todo">To do</div>
+        <div class="kanban-items" id="items-todo"></div>
+      </div>
+      <div class="kanban-column" id="col-working" data-column="working">
+        <div class="kanban-col-header kanban-working">Working</div>
+        <div class="kanban-items" id="items-working"></div>
+      </div>
+      <div class="kanban-column" id="col-done" data-column="done">
+        <div class="kanban-col-header kanban-done">Done</div>
+        <div class="kanban-items" id="items-done"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="kanban.js"></script>
+</body>
+</html>

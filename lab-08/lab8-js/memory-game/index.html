@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Завдання 1 — Memory Game</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cards.css" />
+</head>
+<body>
+
+  <nav class="main-nav">
+    <div class="nav-brand">ЛР №8 — Завдання 1</div>
+    <span class="nav-title">Memory Game</span>
+  </nav>
+
+  
+  <div id="settings-screen" class="settings-screen">
+    <div class="settings-card">
+      <h2 class="settings-title">Налаштування гри</h2>
+
+      <div class="settings-grid">
+        <div class="setting-group">
+          <label class="setting-label">Кількість гравців</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="players" value="1" checked /> 1 гравець
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="players" value="2" /> 2 гравці
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-group" id="player-names-group">
+          <label class="setting-label">Ім'я гравця 1</label>
+          <input type="text" id="player1-name" class="setting-input" placeholder="Гравець 1" value="Гравець 1" />
+          <div id="player2-name-group" style="display:none; margin-top:8px;">
+            <label class="setting-label">Ім'я гравця 2</label>
+            <input type="text" id="player2-name" class="setting-input" placeholder="Гравець 2" value="Гравець 2" />
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label">Розмір поля</label>
+          <select id="board-size" class="setting-select">
+            <option value="4x4">4 × 4 (16 карток)</option>
+            <option value="4x6" selected>4 × 6 (24 картки)</option>
+            <option value="6x6">6 × 6 (36 карток)</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label">Складність</label>
+          <select id="difficulty" class="setting-select">
+            <option value="easy" selected>Easy — 3 хвилини</option>
+            <option value="normal">Normal — 2 хвилини</option>
+            <option value="hard">Hard — 1 хвилина</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label">Кількість раундів</label>
+          <input type="number" id="rounds-count" class="setting-input" min="1" max="10" value="1" />
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button id="reset-settings-btn" class="btn btn-secondary">↺ Скинути</button>
+        <button id="start-game-btn" class="btn btn-primary">▶ Розпочати гру</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="game-screen" class="game-screen" style="display:none;">
+    <div class="game-header">
+      <div class="game-info">
+        <div class="info-block">
+          <span class="info-label">Раунд</span>
+          <span class="info-value" id="current-round">1/1</span>
+        </div>
+        <div class="info-block" id="current-player-block">
+          <span class="info-label">Хід гравця</span>
+          <span class="info-value" id="current-player-name">Гравець 1</span>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Ходи</span>
+          <span class="info-value" id="move-counter">0</span>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Час</span>
+          <span class="info-value" id="timer-display">03:00</span>
+        </div>
+      </div>
+      <div class="game-actions">
+        <button id="restart-btn" class="btn btn-secondary btn-sm">↺ Рестарт</button>
+        <button id="new-settings-btn" class="btn btn-ghost btn-sm">⚙ Налаштування</button>
+      </div>
+    </div>
+
+    <div id="game-board" class="game-board"></div>
+  </div>
+
+  
+  <div id="results-screen" class="results-screen" style="display:none;">
+    <div class="results-card">
+      <div class="trophy">🏆</div>
+      <h2 id="winner-title" class="winner-title"></h2>
+      <div id="results-table" class="results-table"></div>
+      <div class="results-actions">
+        <button id="play-again-btn" class="btn btn-primary">↺ Грати ще раз</button>
+        <button id="new-game-btn" class="btn btn-secondary">⚙ Нові налаштування</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="memory-game.js"></script>
+</body>
+</html>

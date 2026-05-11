@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Forms — Lab 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <div class="card">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="signup">Signup</button>
+                <button class="tab" data-tab="login">Login</button>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form-panel active" id="panel-signup">
+                <h1 class="form-title">Create an account</h1>
+                <form id="form-signup" novalidate>
+                    <div class="field-group">
+                        <label class="field-label" for="signup-username">Username</label>
+                        <div class="input-wrap">
+                            <input class="input" type="text" id="signup-username" name="username" placeholder="Enter username" autocomplete="username">
+                            <span class="field-icon"></span>
+                        </div>
+                        <span class="field-msg"></span>
+                    </div>
+
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label class="field-label" for="signup-firstname">First name</label>
+                            <div class="input-wrap">
+                                <input class="input" type="text" id="signup-firstname" name="firstName" placeholder="Enter first name" autocomplete="given-name">
+                                <span class="field-icon"></span>
+                            </div>
+                            <span class="field-msg"></span>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="signup-lastname">Last name</label>
+                            <div class="input-wrap">
+                                <input class="input" type="text" id="signup-lastname" name="lastName" placeholder="Enter last name" autocomplete="family-name">
+                                <span class="field-icon"></span>
+                            </div>
+                            <span class="field-msg"></span>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="signup-email">Email</label>
+                        <div class="input-wrap">
+                            <input class="input" type="email" id="signup-email" name="email" placeholder="example@email.com" autocomplete="email">
+                            <span class="field-icon"></span>
+                        </div>
+                        <span class="field-msg"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="signup-password">Password</label>
+                        <div class="input-wrap">
+                            <input class="input" type="password" id="signup-password" name="password" placeholder="Min. 6 characters" autocomplete="new-password">
+                            <button type="button" class="eye-btn" data-target="signup-password" aria-label="Show password">
+                                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <svg class="eye-off-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                            </button>
+                        </div>
+                        <span class="field-msg"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="signup-confirm">Confirm Password</label>
+                        <div class="input-wrap">
+                            <input class="input" type="password" id="signup-confirm" name="confirmPassword" placeholder="Repeat password" autocomplete="new-password">
+                            <button type="button" class="eye-btn" data-target="signup-confirm" aria-label="Show confirm password">
+                                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <svg class="eye-off-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                            </button>
+                        </div>
+                        <span class="field-msg"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="signup-phone">Phone</label>
+                        <div class="input-wrap">
+                            <input class="input" type="tel" id="signup-phone" name="phone" placeholder="+380XXXXXXXXX" autocomplete="tel">
+                            <span class="field-icon"></span>
+                        </div>
+                        <span class="field-msg"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="signup-dob">Date of Birth</label>
+                        <div class="input-wrap">
+                            <input class="input" type="date" id="signup-dob" name="dob">
+                            <span class="field-icon"></span>
+                        </div>
+                        <span class="field-msg"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label">Sex</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="sex" value="male">
+                                <span class="radio-custom"></span>
+                                Male
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="sex" value="female">
+                                <span class="radio-custom"></span>
+                                Female
+                            </label>
+                        </div>
+                        <span class="field-msg" id="sex-msg"></span>
+                    </div>
+
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label class="field-label" for="signup-country">Country</label>
+                            <div class="input-wrap select-wrap">
+                                <select class="input select" id="signup-country" name="country">
+                                    <option value="">— Choose —</option>
+                                    <option value="ukraine">Ukraine</option>
+                                    <option value="germany">Germany</option>
+                                    <option value="france">France</option>
+                                    <option value="usa">USA</option>
+                                    <option value="poland">Poland</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="canada">Canada</option>
+                                    <option value="australia">Australia</option>
+                                </select>
+                                <span class="select-arrow">▾</span>
+                                <span class="field-icon"></span>
+                            </div>
+                            <span class="field-msg"></span>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="signup-city">City</label>
+                            <div class="input-wrap select-wrap">
+                                <select class="input select" id="signup-city" name="city" disabled>
+                                    <option value="">— Choose country —</option>
+                                </select>
+                                <span class="select-arrow">▾</span>
+                                <span class="field-icon"></span>
+                            </div>
+                            <span class="field-msg"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Signup</button>
+                </form>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-panel" id="panel-login">
+                <h1 class="form-title">Login here</h1>
+                <form id="form-login" novalidate>
+                    <div class="field-group">
+                        <label class="field-label" for="login-username">Username</label>
+                        <div class="input-wrap">
+                            <input class="input" type="text" id="login-username" name="username" placeholder="Enter username" autocomplete="username">
+                            <span class="field-icon"></span>
+                        </div>
+                        <span class="field-msg"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="login-password">Password</label>
+                        <div class="input-wrap">
+                            <input class="input" type="password" id="login-password" name="password" placeholder="Enter password" autocomplete="current-password">
+                            <button type="button" class="eye-btn" data-target="login-password" aria-label="Show password">
+                                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <svg class="eye-off-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                            </button>
+                        </div>
+                        <span class="field-msg"></span>
+                    </div>
+
+                    <div class="field-group remember-row">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="login-remember" name="remember">
+                            <span class="checkbox-custom"></span>
+                            Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay hidden" id="modal">
+        <div class="modal">
+            <div class="modal-icon">✓</div>
+            <h2 class="modal-title" id="modal-title">Success!</h2>
+            <p class="modal-msg" id="modal-msg">Your account has been created successfully.</p>
+            <button class="btn btn-primary" id="modal-close">OK</button>
+        </div>
+    </div>
+
+    
+    <script src="validation.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
